@@ -3,7 +3,7 @@
     --background-color-container: #fff0f6;
     --color-pink: #ff80ab;
     --color-black: #1b1b1b;
-    --fs-result: 1.2rem;
+    --fs-result: .95rem;
     --fs-normal: .85rem;
 }
 
@@ -52,7 +52,7 @@ body {
 .love-calculator input[type="text"] {
     width: 100%;
     padding: 10px 10px;
-    border: transparent;
+    border: white 1px solid;
     border-radius: 10px;
     font-size: var(--fs-normal);
     color: var(--color-pink);
@@ -82,7 +82,7 @@ body {
     border: 1px solid var(--color-pink);
     font-weight: bold;
     border-radius: 10px;
-    color: var(--color-black);
+    color: var(--background-color-container);
     font-size: var(--fs-normal);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -92,12 +92,43 @@ body {
     color: var(--color-pink)
 }
 
+#calculate.loading {
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+    transition: opacity 0.2s;
+}
+
 #result {
     margin-top: 15px;
-    background-color: aqua;
     padding: 10px 10px;
     width: 100%;
     font-size: var(--fs-result);
+    text-align: center;
+    font-style: italic;
     display: none;
 }
 
+.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--color-black);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 0.8s linear infinite;
+    display: none;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    
+}
