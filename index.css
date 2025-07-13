@@ -1,5 +1,103 @@
+:root {
+    --background-color-body: #fceaff;
+    --background-color-container: #fff0f6;
+    --color-pink: #ff80ab;
+    --color-black: #1b1b1b;
+    --fs-result: 1.2rem;
+    --fs-normal: .85rem;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: var(--background-color-body);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    background-color: var(--background-color-container);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--color-pink);
+    width: 100%;
+    max-width: 500px;
+}
+
+.container h2 {
+    text-align: center;
+    color: var(--color-pink);
+}
+
+.love-calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.love-calculator input[type="text"] {
+    width: 100%;
+    padding: 10px 10px;
+    border: transparent;
+    border-radius: 10px;
+    font-size: var(--fs-normal);
+    color: var(--color-pink);
+    font-weight: bolder;
+}
+
+.love-calculator input[type="text"]:focus {
+    outline: none;
+    border: 1px solid var(--color-pink);
+}
+
+.love-calculator label {
+    margin-top: 15px;
+    color: var(--color-black);
+    font-size: var(--fs-normal);
+    font-weight: bold;
+}
+
+#calculate {
+    width: 100%;
+    background-color: var(--color-pink);
+    border: none;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 0;
+    cursor: pointer;
+    border: 1px solid var(--color-pink);
+    font-weight: bold;
+    border-radius: 10px;
+    color: var(--color-black);
+    font-size: var(--fs-normal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#calculate:hover {
+    background-color: var(--background-color-container);
+    color: var(--color-pink)
+}
+
+#result {
+    margin-top: 15px;
+    background-color: aqua;
+    padding: 10px 10px;
+    width: 100%;
+    font-size: var(--fs-result);
+    display: none;
+}
+
